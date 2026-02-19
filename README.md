@@ -2,6 +2,7 @@
 
 
 ![Wordle showcase](wordle.png)
+![Wordle showcase](w2.png)
 
 A bash script that allows you to play Wordle in the terminal, without an interface. 
 
