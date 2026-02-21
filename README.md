@@ -1,7 +1,7 @@
 # Terminal Wordle
 
-![Wordle showcase](w2.png)
-![Wordle showcase](w22.png)
+![Wordle showcase](w23.png)
+![Wordle showcase](w24.png)
 
 ### Edit: Added word validation
 
