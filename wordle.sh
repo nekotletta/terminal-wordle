@@ -73,6 +73,19 @@ eval_guess () {
 
 }
 
+# check that the user put a valid word
+validate_word () {
+    local guessed_word=$1
+    words=`cat valid-words.txt`
+    for w in $words; do
+        if [[ $w == $guessed_word ]]; then
+            echo 1
+            return
+        fi
+    done
+    echo 0
+}
+
 
 attempts=0;
 while  [ "$input" != "$word" ] && [ "$attempts" -lt 5 ]; do
@@ -88,6 +101,13 @@ while  [ "$input" != "$word" ] && [ "$attempts" -lt 5 ]; do
         echo "-------"
         break
     else
+        is_valid=$(validate_word ${input,,})
+        if [[ $is_valid -eq 0 ]]; then
+            echo "-------"
+            echo "Invalid word. Try again."
+            echo "-------"
+            continue
+        fi
         eval_guess ${input,,}
         ((attempts++))
     fi
